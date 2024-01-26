@@ -3,7 +3,6 @@ from Setup import Setup
 from APIConnection import APIConnection
 
 def main():
-    print("Called Main")
 
     wifi_connection = Setup()
     wifi_connection.setup()
@@ -16,6 +15,10 @@ def main():
     metadata = APIConnection()
     metadata.get_api_data()
 
+    for i in range(len(metadata.metadata)):
+        print(metadata.metadata[i])
+    
+    print(metadata.exposure)
     
 if __name__ == "__main__":
     main()
