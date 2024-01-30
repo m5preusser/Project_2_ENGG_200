@@ -1,6 +1,8 @@
-
 from Setup import Setup
 from APIConnection import APIConnection
+from Neopixel import NeoPixel
+import time
+from machine import Pin
 
 def main():
 
@@ -19,6 +21,12 @@ def main():
         print(metadata.metadata[i])
     
     print(metadata.exposure)
+    print(metadata.summary) 
+
+    np = NeoPixel(30,1,1)
+    np.fill((255,0,0))
+    np.show()
+    print("done")
     
 if __name__ == "__main__":
     main()
