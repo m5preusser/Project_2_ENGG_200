@@ -1,6 +1,6 @@
 from Setup import Setup
 from APIConnection import APIConnection
-from Neopixel import NeoPixel
+from neopixel import NeoPixel
 import time
 from machine import Pin
 
