@@ -3,17 +3,18 @@ import json, os
 
 class APIConnection:
 
-    # This 2D array contains all necessary metadata 
+    summary = None
+    exposure = None
+    # This 2D array contains all necessary metadata for the risk level provided a 3 day forecast
     # Each row represents a the information for that day
     # The first 3 rows have the following column structure:
     # Day of week, Alpine danger value, Below treeline danger value, Treeline danger value
+    
     metadata = [
         ["","","",""],
         ["","","",""],
         ["","","",""]
     ]
-
-    exposure = ""
 
     def get_api_data(self):
 
@@ -29,5 +30,5 @@ class APIConnection:
                     self.metadata[day][0] = dangerRatings[day]["date"]["display"]
                     self.metadata[day][1] = dangerRatings[day]["ratings"]["alp"]["rating"]["display"]
                     self.metadata[day][2] = dangerRatings[day]["ratings"]["btl"]["rating"]["display"]
-                    self.metadata[day][3] = dangerRatings[day]["ratings"]["tln"]["rating"]["display"]
+                    self.metadata[day][3] = dangerRatings[day]["ratings"]["tln"]["rating"]["display"]                    
                 
